@@ -1,0 +1,25 @@
+[package]
+name = "flp-rusty-model"
+version = "0.1.0"
+edition = "2021"
+authors = ["Hakukano <hakukano@flp-web.org>"]
+description = "A proc macro that turns a struct into something like RoR's active model "
+repository = "https://github.com/Hakukano/FLP-Rusty-Model"
+homepage = "https://wiki.flp-web.org/"
+license = "MIT"
+readme = "README.md"
+
+[lib]
+proc-macro = true
+
+[dependencies]
+convert_case = "0.6.0"
+darling = "0.20"
+proc-macro2 = "1.0"
+quote = "1.0"
+syn = { version = "2.0", features = ["full"] }
+
+[dev-dependencies]
+once_cell = "1.19"
+parking_lot = "0.12"
+serial_test = "3.0"
