@@ -43,9 +43,9 @@ mod user_service {
         INSTANCE.read().get(id).cloned()
     }
 
-    pub fn save(user: &User) -> Result<(), SaveError> {
+    pub fn save(user: User) -> Result<User, SaveError> {
         INSTANCE.write().insert(user.id, user.clone());
-        Ok(())
+        Ok(user)
     }
 
     pub fn destroy(id: &u64) -> Result<(), DestroyError> {
@@ -79,9 +79,9 @@ mod post_service {
         INSTANCE.read().get(id).cloned()
     }
 
-    pub fn save(post: &Post) -> Result<(), SaveError> {
+    pub fn save(post: Post) -> Result<Post, SaveError> {
         INSTANCE.write().insert(post.id.clone(), post.clone());
-        Ok(())
+        Ok(post)
     }
 
     pub fn destroy(id: &str) -> Result<(), DestroyError> {

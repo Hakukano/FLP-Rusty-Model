@@ -140,8 +140,8 @@ pub fn handle(token: TokenStream) -> TokenStream {
                 #service::find(id)
             }
 
-            pub fn save(&self) -> std::result::Result<(), #service::SaveError> {
-                #service::save(&self)
+            pub fn save(self) -> std::result::Result<Self, #service::SaveError> {
+                #service::save(self)
             }
 
             pub fn destroy(self) -> std::result::Result<(), #service::DestroyError> {
